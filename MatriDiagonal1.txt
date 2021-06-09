@@ -1,0 +1,68 @@
+/*To Print Difference of Left diagonal and right diagonal*/
+import java.util.*;
+class MatrixDiagonal
+{
+	public static void main(String args[])
+	{
+		int m,i,j,sum=0,add=0,diffleft,diffright;
+		int matrix[][];
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter number of rows and Columns");
+		m=sc.nextInt();
+		m=sc.nextInt();
+
+		matrix=new int[m][m];
+		System.out.println("Enter "+(m*m)+" elements");
+		for(i=0;i<m;i++)
+		{
+			for(j=0;j<m;j++)
+			{
+				  matrix[i][j]=sc.nextInt();
+			}
+		}
+		for(i=0;i<m;i++)
+		{
+			for(j=0;j<m;j++)
+			{
+				if(i==j)
+				{
+				sum+=matrix[i][j];
+				}
+				if(i+j==m-1)
+				{
+			    add+=matrix[i][j];
+				}
+			}
+		}
+		diffleft=sum-add;
+		diffright=add-sum;
+		System.out.println("The Difference from Left to Right is : "+diffleft);
+		System.out.println("The Difference from Right to Left is : "+diffright);
+	}
+}
+
+//Output//
+Enter number of rows and Columns
+4
+4
+Enter 16 elements
+1
+2
+3
+4
+5
+6
+7
+8
+9
+1
+2
+3
+4
+5
+6
+8
+The Difference from Left to Right is : 1
+The Difference from Right to Left is : -1
+Press any key to continue . . .
